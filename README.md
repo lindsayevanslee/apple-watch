@@ -17,7 +17,7 @@ python convert_xml_to_csv.py data/apple_health_export/export.xml
 To convert the xml data to a csv file, run the following command in the Terminal:
 
 ``` bash
-python convert_xml_to_csv.py data/apple_health_export/export.xml | jq -r '[.endDate, .type, .unit, .value] | @csv' > data/apple_health_export/export.csv
+python convert_xml_to_csv.py data/apple_health_export/export.xml | jq -r '[.startDate, .endDate, .type, .unit, .value] | @csv' > data/apple_health_export/export.csv
 ```
 
 This requires the JSON parser `jq` to be installed. I [installed jq via Homebrew](https://stackoverflow.com/questions/37668134/how-to-install-jq-on-mac-on-the-command-line) on my Mac with: `brew install jq`.
