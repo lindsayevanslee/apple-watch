@@ -1,6 +1,9 @@
 #My data folder
 data/
 
+#My output folder
+output/
+
 # History files
 .Rhistory
 .Rapp.history
