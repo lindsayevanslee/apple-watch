@@ -66,8 +66,8 @@ df_spo2_sleep <- df_spo2 %>%
 df_spo2_sleep %>% 
   filter(endDate > "2023-01-01") %>% 
   mutate(period = case_when(
-    endDate < "2023-04-01" ~ "2023-01 to 2023-03",
-    TRUE ~ "2023-04 to now"
+    endDate < "2023-04-26" ~ "2023-01 to 2023-04-25",
+    TRUE ~ "2023-04-26 to now"
   )) %>% 
   ggplot(aes(x = endDate, y = value)) +
   geom_point(aes(color = is_asleep), alpha = 0.5) +
@@ -80,8 +80,8 @@ pdf("output/boxplot.pdf", width = 10, height = 7)
 df_spo2_sleep %>% 
   filter(endDate > "2023-01-01") %>% 
   mutate(period = case_when(
-    endDate < "2023-04-01" ~ "2023-01 to 2023-03",
-    TRUE ~ "2023-04 to now"
+    endDate < "2023-04-26" ~ "2023-01 to 2023-04-25",
+    TRUE ~ "2023-04-26 to now"
   )) %>% 
   ggplot(aes(x = period, y = value, color = is_asleep)) +
   geom_boxplot() +
